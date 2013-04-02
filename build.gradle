@@ -1,0 +1,33 @@
+apply plugin: 'java'
+
+subprojects {
+  apply plugin: 'java'
+
+  repositories {
+      mavenCentral()
+  }
+
+  dependencies {
+      testCompile 'junit:junit:4.10'
+  }
+
+  task "init-project" << {
+    sourceSets*.java.srcDirs*.each { File dir ->
+      if(!dir.exists()) {
+        println "creating $dir"
+        dir.mkdirs()
+      } else {
+        println "skipping $dir"
+      }
+    }
+
+    sourceSets*.resources.srcDirs*.each { File dir ->
+      if(!dir.exists()) {
+        println "creating directory $dir"
+        dir.mkdirs()
+      }else {
+        println "skipping $dir"
+      }
+    }
+  }
+}
