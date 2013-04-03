@@ -1,5 +1,6 @@
 package cfc.jerseyshore.rest;
 
+import cfc.jerseyshore.models.DataStore;
 import cfc.jerseyshore.models.Series;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
@@ -16,11 +17,11 @@ public class SeriesResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Details on the whole series", responseClass = "cfc.jerseyshore.models.Series")
     public Series getSeries() {
-        return Series.get();
+        return DataStore.getSeries();
     }
 
     @Path("/seasons")
     public SeasonsResource getSeasons() {
-        return new SeasonsResource(Series.get());
+        return new SeasonsResource(DataStore.getSeries());
     }
 }

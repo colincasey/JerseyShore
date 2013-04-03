@@ -13,7 +13,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Api("/seasons")
 @Produces(MediaType.APPLICATION_JSON)
 public class SeasonsResource {
     private Series series;
@@ -23,7 +22,6 @@ public class SeasonsResource {
     }
 
     @GET
-    @ApiOperation(value = "Get all the seasons", responseClass = "java.util.List<cfc.jerseyshore.rest.Season>")
     public List<Season> getSeasons() {
         return series.getSeasons();
     }
@@ -31,7 +29,7 @@ public class SeasonsResource {
     @GET
     @Path("{id}")
     public Season getSeason(@PathParam("id") int id) {
-        Season season = Season.get(id);
+        Season season = series.getSeason(id);
         if(season == null) {
             throw new NotFoundException("Season " + id + " was not found");
         }
@@ -40,6 +38,6 @@ public class SeasonsResource {
 
     @Path("{id}/episodes")
     public EpisodesResource getEpisodes(@PathParam("id") int id) {
-        return new EpisodesResource(id);
+        return new EpisodesResource(series, series.getSeason(id));
     }
 }

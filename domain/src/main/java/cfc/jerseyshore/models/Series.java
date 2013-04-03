@@ -45,11 +45,12 @@ public class Series {
         this.seasons = seasons;
     }
 
-    public static Series get() {
-        Series s = new Series();
-        s.setTitle("Jersey Shore");
-        s.setDescription("todo description");
-        s.setSeasons(Season.all());
-        return s;
+    public Season getSeason(int id) {
+        for(Season season : getSeasons()) {
+            if(season.getId() == id) {
+                return season;
+            }
+        }
+        return null;
     }
 }
