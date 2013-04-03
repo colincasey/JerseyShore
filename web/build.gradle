@@ -13,6 +13,7 @@ dependencies {
   compile 'com.sun.jersey:jersey-json:1.17.1'
   compile 'javax.servlet:servlet-api:2.5'
   compile 'javax.ws.rs:jsr311-api:1.1.1'
+  compile 'com.wordnik:swagger-jersey-jaxrs_2.9.1:1.2.1'
 }
 
 jettyRun.contextPath = '/'
