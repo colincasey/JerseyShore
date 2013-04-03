@@ -7,6 +7,12 @@
     <display-name>JerseyShore</display-name>
 
     <servlet>
+        <servlet-name>Bootstrap</servlet-name>
+        <servlet-class>cfc.jerseyshore.rest.SwaggerBootstrap</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
         <servlet-name>JerseyShore</servlet-name>
         <servlet-class>
             com.sun.jersey.spi.container.servlet.ServletContainer
