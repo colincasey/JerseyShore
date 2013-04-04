@@ -39,3 +39,10 @@ if you specify `Accept: application/json` as the desired response format.
 
     http://localhost:8081/series/seasons/{seasonId}/episodes/{episodeNumber}
     Accept: application/json || application/xml
+
+## Swagger Integration
+
+API Documentation is automatically handled by Swagger as can be seen below using Swagger UI
+to browse `http://localhost:8081/api-docs.json/series`:
+
+![SwaggerUI](https://raw.github.com/colincasey/JerseyShore/master/swagger-ui.png)
