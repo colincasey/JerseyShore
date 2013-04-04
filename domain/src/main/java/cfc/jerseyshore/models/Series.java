@@ -29,6 +29,7 @@ public class Series {
         this.description = description;
     }
 
+    @XmlElement
     public List<Cast> getCast() {
         return cast;
     }
@@ -37,6 +38,7 @@ public class Series {
         this.cast = cast;
     }
 
+    @XmlElement
     public List<Season> getSeasons() {
         return seasons;
     }

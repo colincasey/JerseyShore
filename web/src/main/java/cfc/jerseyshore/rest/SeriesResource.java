@@ -11,10 +11,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/series")
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 @Api(value = "/series", description = "More information than one should actually desire about the Jersey Shore")
 public class SeriesResource {
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Details on the whole series", responseClass = "cfc.jerseyshore.models.Series")
     public Series getSeries() {
         return DataStore.getSeries();

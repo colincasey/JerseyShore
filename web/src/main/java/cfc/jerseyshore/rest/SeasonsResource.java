@@ -3,8 +3,6 @@ package cfc.jerseyshore.rest;
 import cfc.jerseyshore.models.Season;
 import cfc.jerseyshore.models.Series;
 import com.sun.jersey.api.NotFoundException;
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,7 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Produces(MediaType.APPLICATION_JSON)
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public class SeasonsResource {
     private Series series;
 

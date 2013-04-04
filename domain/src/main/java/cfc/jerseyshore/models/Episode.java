@@ -1,7 +1,10 @@
 package cfc.jerseyshore.models;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
+@XmlRootElement(name = "episode")
 public class Episode {
     private int episodeNumber;
     private int seasonEpisodeNumber;
@@ -9,6 +12,7 @@ public class Episode {
     private double viewers;
     private Date airDate;
 
+    @XmlElement
     public int getEpisodeNumber() {
         return episodeNumber;
     }
@@ -17,6 +21,7 @@ public class Episode {
         this.episodeNumber = episodeNumber;
     }
 
+    @XmlElement
     public int getSeasonEpisodeNumber() {
         return seasonEpisodeNumber;
     }
@@ -25,6 +30,7 @@ public class Episode {
         this.seasonEpisodeNumber = seasonEpisodeNumber;
     }
 
+    @XmlElement
     public String getTitle() {
         return title;
     }
@@ -33,6 +39,7 @@ public class Episode {
         this.title = title;
     }
 
+    @XmlElement
     public double getViewers() {
         return viewers;
     }
@@ -41,6 +48,7 @@ public class Episode {
         this.viewers = viewers;
     }
 
+    @XmlElement
     public Date getAirDate() {
         return airDate;
     }
